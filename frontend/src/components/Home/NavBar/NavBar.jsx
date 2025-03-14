@@ -11,7 +11,7 @@ const NavBar = () => {
                         <div className="md:flex md:items-center md:gap-12">
                             <a className="block font-semibold text-2xl " href="#">
                                 {/* <span className="sr-only">Home</span> */}
-                                 BOOK STORE
+                                <span className="text-blue-800">ASA</span> BOOK STORE
                             </a>
                         </div>
 
