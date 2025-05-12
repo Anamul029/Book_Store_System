@@ -1,17 +1,19 @@
 
-import './App.css'
+// import './App.css'
+// import AllBooks from './components/AllBooks/AllBooks'
 import Banner from './components/Home/Banner/Banner'
-import Footer from './components/Home/Footer/Footer'
-import NavBar from './components/Home/NavBar/NavBar'
+import FAQ from './components/Home/FAQ/FAQ'
+import Testimonials from './components/Home/Testimonials/Testimonials'
 
 function App() {
 
   return (
     <>
-      <div className='max-w-[1440px] mx-auto'>
-        <NavBar />
+      <div className=''>
         <Banner />
-        <Footer />
+        <FAQ/>
+        <Testimonials/>
+
       </div>
     </>
   )

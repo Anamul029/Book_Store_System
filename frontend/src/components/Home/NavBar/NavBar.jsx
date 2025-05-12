@@ -1,8 +1,9 @@
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
 
     return (
-        <div className="">
+        <div className="fixed w-[1440px] mx-auto z-50">
         <header className="bg-black text-white">
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
@@ -11,20 +12,20 @@ const NavBar = () => {
                         <div className="md:flex md:items-center md:gap-12">
                             <a className="block font-semibold text-2xl " href="#">
                                 {/* <span className="sr-only">Home</span> */}
-                                 BOOK STORE
+                                <span className="text-blue-800">ASA</span> BOOK STORE
                             </a>
                         </div>
 
                         <div className="hidden md:block">
                             <nav aria-label="Global">
                                 <ul className="flex items-center gap-6 text-sm">
-                                    <li>
+                                    <NavLink to="/">
                                         <a className=" transition hover:text-gray-500/75" href="#"> Home </a>
-                                    </li>
+                                    </NavLink>
 
-                                    <li>
+                                    <NavLink to='/allbooks'>
                                         <a className=" transition hover:text-gray-500/75" href="#"> All Books </a>
-                                    </li>
+                                    </NavLink>
 
                                     <li>
                                         <a className=" transition hover:text-gray-500/75" href="#">Borrow Book </a>
@@ -35,7 +36,7 @@ const NavBar = () => {
                                     </li>
 
                                     <li>
-                                        <a className=" transition hover:text-gray-500/75" href="#"> Contuct Us </a>
+                                        <a className=" transition hover:text-gray-500/75" href="#"> Contact Us </a>
                                     </li>
 
                             
@@ -46,20 +47,20 @@ const NavBar = () => {
                     {/* right side */}
                     <div className="flex items-center gap-4">
                         <div className="sm:flex sm:gap-4">
-                            <a
+                            <NavLink to='/login'
                                 className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm"
                                 href="#"
                             >
                                 Login
-                            </a>
+                            </NavLink>
 
                             <div className="hidden sm:flex">
-                                <a
+                                <NavLink to='/register'
                                     className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
                                     href="#"
                                 >
                                     Register for free
-                                </a>
+                                </NavLink>
                             </div>
                         </div>
 
