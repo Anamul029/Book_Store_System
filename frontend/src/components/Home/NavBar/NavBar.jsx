@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
 
@@ -18,13 +19,13 @@ const NavBar = () => {
                         <div className="hidden md:block">
                             <nav aria-label="Global">
                                 <ul className="flex items-center gap-6 text-sm">
-                                    <li>
+                                    <NavLink to="/">
                                         <a className=" transition hover:text-gray-500/75" href="#"> Home </a>
-                                    </li>
+                                    </NavLink>
 
-                                    <li>
+                                    <NavLink to='/allbooks'>
                                         <a className=" transition hover:text-gray-500/75" href="#"> All Books </a>
-                                    </li>
+                                    </NavLink>
 
                                     <li>
                                         <a className=" transition hover:text-gray-500/75" href="#">Borrow Book </a>
@@ -35,7 +36,7 @@ const NavBar = () => {
                                     </li>
 
                                     <li>
-                                        <a className=" transition hover:text-gray-500/75" href="#"> Contuct Us </a>
+                                        <a className=" transition hover:text-gray-500/75" href="#"> Contact Us </a>
                                     </li>
 
                             
