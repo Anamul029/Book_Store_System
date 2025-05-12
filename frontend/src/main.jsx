@@ -9,6 +9,7 @@ import {
 import "./index.css";
 import Root from './components/Root/Root.jsx';
 import AllBooks from './components/AllBooks/AllBooks.jsx';
+import Login from './components/Authentication/Login/Login.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
         path:'/allbooks',
         element:<AllBooks/>,
       },
+      {
+        path:'/login',
+        element:<Login/>
+      }
     ]
   },
 ]);
