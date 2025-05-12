@@ -2,7 +2,7 @@
 const NavBar = () => {
 
     return (
-        <div className="">
+        <div className="fixed w-[1440px] mx-auto z-50">
         <header className="bg-black text-white">
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">

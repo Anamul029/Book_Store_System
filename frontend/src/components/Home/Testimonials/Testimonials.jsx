@@ -34,7 +34,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="bg-[#0b0c10] font-inter  mx-auto px-[7%]">
+    <section className=" font-inter  mx-auto px-[7%]">
       <div className="mx-auto  px-4 py-12 sm:px-6 lg:me-0 lg:py-16 lg:ps-8 lg:pe-0 xl:py-24">
         <div className=" items-end justify-between sm:flex sm:pe-6 lg:pe-8">
           <h2 className=" text-4xl font-bold tracking-tight text-white sm:text-5xl">
