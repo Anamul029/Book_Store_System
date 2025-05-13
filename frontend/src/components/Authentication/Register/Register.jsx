@@ -1,27 +1,42 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Auth from "../../../assets/Firebase/firebase.config";
+import Swal from "sweetalert2";
 
 const Register = () => {
-
+    const navigate=useNavigate();
     const handleRegister = e => {
         e.preventDefault();
-        const name=e.target.name.value;
-        const email=e.target.email.value;
-        const password=e.target.password.value;
-        const photo=e.target.photo.value;
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        const photo = e.target.photo.value;
         createUserWithEmailAndPassword(Auth, email, password)
             .then((userCredential) => {
                 // Signed up 
                 const user = userCredential.user;
                 console.log(user);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Successfully user Created",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                navigate('/')
                 // ...
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 // ..
-                console.log(errorMessage,errorCode);
+                console.log(errorMessage, errorCode);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!Try again",
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                });
             });
     }
     return (
