@@ -1,7 +1,8 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Auth from '../../../assets/Firebase/firebase.config';
 import Swal from 'sweetalert2';
+const provider = new GoogleAuthProvider();
 
 const Login = () => {
     const navigate = useNavigate();
@@ -37,6 +38,37 @@ const Login = () => {
             });
 
     }
+
+    // google login
+    const handleGoogleLogin = () => {
+        signInWithPopup(Auth, provider)
+            .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                // The signed-in user info.
+                const user = result.user;
+                console.log(user, token);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Successfully user login",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                navigate('/')
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorMessage = error.message;
+                console.log(errorMessage);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!",
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                });
+            });
+    }
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="">
@@ -65,7 +97,7 @@ const Login = () => {
                     </form>
                     {/* another login part */}
                     <div className="flex flex-col gap-2 mx-auto">
-                        <button className="btn mb-4 bg-yellow-400 w-auto mx-auto">Google Login</button>
+                        <button onClick={handleGoogleLogin} className="btn mb-4 bg-yellow-400 w-auto mx-auto">Google Login</button>
                     </div>
                 </div>
             </div>
