@@ -11,7 +11,7 @@ const AllBooks = () => {
     },[]);
     console.log(books)
     return (
-        <div>
+        <div className="pt-24">
             <h3 className="text-2xl font-semibold text-center mb-8">See all the books here:{books.length}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {
